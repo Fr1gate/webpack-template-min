@@ -49,7 +49,7 @@ module.exports = {
                     options: { 
                         sourceMap: true, 
                         postcssOptions: {
-                            config:  path.resolve(__dirname, 'postcss.config.js')
+                            config:  path.resolve(__dirname, '../postcss.config.js')
                         }
                     }
                 }
@@ -69,7 +69,7 @@ module.exports = {
                     options: { 
                         sourceMap: true, 
                         postcssOptions: {
-                            config:  path.resolve(__dirname, 'postcss.config.js')
+                            config:  path.resolve(__dirname, '../postcss.config.js')
                         }
                     }
                 },
