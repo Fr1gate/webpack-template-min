@@ -23,7 +23,7 @@ module.exports = {
     output: {
         filename: `${PATHS.assets}/js/[name].js`,
         path: PATHS.dist,
-        publicPath: '/'
+        publicPath: './'
     },
     module: {
         rules: [{
@@ -39,7 +39,8 @@ module.exports = {
             test: /\.(png|gif|jpeg|jpg|svg)$/i,
             loader: 'file-loader',
             options: {
-                name: '[name].[ext]'
+                name: '[name].[ext]',
+                outputPath: PATHS.assets + '/img',
             }
         },
         {
@@ -49,7 +50,10 @@ module.exports = {
                 MiniCssExtractPlugin.loader, 
                 {
                     loader: 'css-loader',
-                    options: { sourceMap: true }
+                    options: { 
+                        sourceMap: true,
+                        url: false, 
+                    }
                 },
                 {
                     loader: 'postcss-loader',
@@ -69,7 +73,10 @@ module.exports = {
                 MiniCssExtractPlugin.loader, 
                 {
                     loader: 'css-loader',
-                    options: { sourceMap: true }
+                    options: { 
+                        sourceMap: true,
+                        url: false, 
+                    }
                 },
                 {
                     loader: 'postcss-loader',
@@ -83,7 +90,10 @@ module.exports = {
                 {
                     loader: 'sass-loader',
                     options: { sourceMap: true }
-                }
+                },
+                {
+                    laoder: 'resolve-url-loader'
+                },
             ],
         },
     ]
@@ -107,14 +117,5 @@ module.exports = {
             template: `${PAGES_DIR}/${page}`,
             filename: `./${page.replace(/\.pug$/, '.html')}`
         }))
-
-
-
-
-        // new HtmlWebpackPlugin({
-        //     hash: false,
-        //     template: `${PATHS.src}/index.html`,
-        //     filename: `./index.html`
-        // }),
     ],
 }
