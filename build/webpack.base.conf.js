@@ -23,7 +23,7 @@ module.exports = {
     output: {
         filename: `${PATHS.assets}/js/[name].js`,
         path: PATHS.dist,
-        publicPath: './'
+        publicPath: '/'
     },
     module: {
         rules: [{
@@ -92,7 +92,7 @@ module.exports = {
                     options: { sourceMap: true }
                 },
                 {
-                    laoder: 'resolve-url-loader'
+                    loader: 'resolve-url-loader'
                 },
             ],
         },
