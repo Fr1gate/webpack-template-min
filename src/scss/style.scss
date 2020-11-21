@@ -1,8 +1,17 @@
+@import "./includes.scss";
+
+@include font("Pacifico", normal, normal);
+
 h1 {
     color: red;
     display: flex;
     animation: none;
 }
 h2 {
+    font-family: "Pacifico", serif;
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: normal;
+
     color: green;
 } 

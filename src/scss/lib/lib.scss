@@ -1,0 +1,29 @@
+@mixin font($font-family, $font-weight, $font-style) {
+    @font-face {
+        font-family: $font-family;
+        src: url('../fonts/#{$font-family}.woff')    format("woff"),
+             url('../fonts/#{$font-family}.woff2')   format("woff2");
+        font-weight: $font-weight;
+        font-style: $font-style;
+    }
+}
+
+@function vw($value, $base: 1920) {
+	@return $value / $base * 100vw;
+}
+
+@function vh($value, $base: 1080) {
+	@return $value / $base * 100vh;
+}
+
+.svg__container {
+	width: vw(40);
+	height: vw(40);
+
+	& svg {
+		display: block;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
